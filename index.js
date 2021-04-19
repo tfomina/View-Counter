@@ -4,6 +4,9 @@ const counterRouter = require("./routes/counter");
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/counter", counterRouter);
 
 app.use(notFoundMiddleware);

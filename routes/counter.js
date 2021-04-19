@@ -9,7 +9,7 @@ if (!fs.existsSync(filePath)) {
   fs.writeFileSync(filePath, "{}", "utf8");
 }
 
-// увеличить счётчик
+// увеличить счётчик по id книги
 router.post("/:bookId/incr", (req, res) => {
   const { bookId } = req.params;
 
@@ -32,7 +32,7 @@ router.post("/:bookId/incr", (req, res) => {
   });
 });
 
-// получить значение счётчика
+// получить значение счётчика по id книги
 router.get("/:bookId", (req, res) => {
   const { bookId } = req.params;
 

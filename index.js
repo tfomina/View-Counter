@@ -1,6 +1,6 @@
 const express = require("express");
-const notFoundMiddleware = require("./middleware/notFound");
-const counterRouter = require("./routes/counter");
+const notFoundMiddleware = require("./src/middleware/notFound");
+const counterRouter = require("./src/routes/counter");
 
 const app = express();
 

@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-const filePath = path.join(__dirname, "..", "counter.json");
+const filePath = path.join(__dirname, "..", "..", "counter.json");
 
 if (!fs.existsSync(filePath)) {
   fs.writeFileSync(filePath, "{}", "utf8");

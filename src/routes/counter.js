@@ -18,11 +18,8 @@ router.post("/:bookId/incr", (req, res) => {
 
     const counter = JSON.parse(data);
 
-    if (!(bookId in counter)) {
-      counter[bookId] = 1;
-    } else {
-      counter[bookId] = ++counter[bookId];
-    }
+    if (!(bookId in counter)) counter[bookId] = 0;
+    counter[bookId] += 1;
 
     fs.writeFileSync(filePath, JSON.stringify(counter), "utf8", (err) => {
       if (err) throw err;

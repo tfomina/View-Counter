@@ -18,6 +18,20 @@ GET /counter/:bookId
 
 ### Запуск программы в dev режиме
 
-```javascript
+```
 npm run dev
+```
+
+### В докере
+
+**Собрать**
+
+```
+docker build . -t counter-app
+```
+
+**Запустить**
+
+```
+docker run --rm -p 3000:3000 -v c:\:/counter-storage counter-app
 ```

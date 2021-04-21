@@ -3,8 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-const folder = "C:/counter-storage";
-const filePath = `${folder}/counter.json`;
+const filePath = path.join(__dirname, "..", "storage", "counter.json");
 
 if (!fs.existsSync(filePath)) {
   fs.writeFileSync(filePath, "{}", "utf8");

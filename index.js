@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const notFoundMiddleware = require("./src/middleware/notFound");
 const counterRouter = require("./src/routes/counter");
 

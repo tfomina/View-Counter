@@ -45,7 +45,7 @@ router.get("/:bookId", (req, res) => {
     if (!(bookId in counter)) {
       res.status(404).json("Not found");
     } else {
-      res.json({ test: counter[bookId] });
+      res.json({ counter: counter[bookId] });
     }
   });
 });

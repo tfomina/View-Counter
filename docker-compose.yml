@@ -11,6 +11,6 @@ services:
       - 3000:3000
     environment:
       PORT: 3000
-      DATA_FOLDER: storage
+      STORAGE_FOLDER: storage
     volumes:
       - C:\counter-storage:/app/storage

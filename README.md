@@ -33,5 +33,5 @@ docker build . -t counter-app
 **Запустить**
 
 ```
-docker run --rm -p 3000:3000 -v C:/counter-storage:/app/storage -e DATA_FOLDER=/storage counter-app
+docker run --rm -p 3000:3000 -v C:/counter-storage:/app/storage -e STORAGE_FOLDER =/storage counter-app
 ```

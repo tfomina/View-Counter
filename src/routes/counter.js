@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-const folder = process.env.DATA_FOLDER || "storage";
+const folder = process.env.STORAGE_FOLDER || "storage";
 const filePath = path.join(__dirname, "..", "..", folder, "counter.json");
 
 if (!fs.existsSync(filePath)) {

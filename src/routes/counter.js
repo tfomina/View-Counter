@@ -3,10 +3,13 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-const filePath = path.join(__dirname, "..", "storage", "counter.json");
+const folder = process.env.DATA_FOLDER || "storage";
+const filePath = path.join(__dirname, "..", "..", folder, "counter.json");
 
 if (!fs.existsSync(filePath)) {
   fs.writeFileSync(filePath, "{}", "utf8");
+
+  console.log(`Создан файл ${filePath}`);
 }
 
 // увеличить счётчик по id книги
@@ -25,6 +28,7 @@ router.post("/:bookId/incr", (req, res) => {
       if (err) throw err;
     });
 
+    console.log(`Значение счётчика для bookId=${bookId} увеличено на 1`);
     res.json("Ok");
   });
 });
